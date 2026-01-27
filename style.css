@@ -26,7 +26,7 @@ body.darkn .card {
   background-attachment: fixed;  
   color: white;
 }
-body.darkn .cerclee{
+body.darkn .compteur{
    color: white;
 }
 
@@ -194,7 +194,7 @@ button:hover {
 .control-section #compteur {
     font-weight: bold;
     font-size: 1.1rem;
-    color: #101111;
+    
 }
 .control-section input#recherche {
     padding: 8px 12px;
