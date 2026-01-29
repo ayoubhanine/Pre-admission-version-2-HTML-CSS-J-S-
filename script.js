@@ -6,7 +6,20 @@ const rechercheInput = document.getElementById("recherche");
 const btn=document.getElementById("dark")
 btn.addEventListener("click",()=>{
     document.body.classList.toggle("darkn")
+    if (document.body.classList.contains("darkn")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
 })
+document.addEventListener("DOMContentLoaded", () => {
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+        document.body.classList.add("darkn");
+    }
+});
+
 let currentPage = 1;
 const itemsPerPage = 5;
 
@@ -27,19 +40,42 @@ function afficherMessage(texte, type) {
 }
 
 const cercleCompteur = document.getElementById("cercleCompteur");
+// function appliquerFiltre() {
+//     const valeur = rechercheInput.value.toLowerCase();
+
+//     demandesAffichees = demandes.filter(d =>
+//         d.nom.toLowerCase().includes(valeur) ||
+//         d.prenom.toLowerCase().includes(valeur) ||
+//         d.tel.toString().includes(valeur) ||
+//         d.email.toLowerCase().includes(valeur)
+//     );
+
+//     currentPage = 1;
+//     afficherDemandes();
+// }
 function appliquerFiltre() {
     const valeur = rechercheInput.value.toLowerCase();
-
-    demandesAffichees = demandes.filter(d =>
-        d.nom.toLowerCase().includes(valeur) ||
-        d.prenom.toLowerCase().includes(valeur) ||
-        d.tel.toString().includes(valeur) ||
-        d.email.toLowerCase().includes(valeur)
-    );
-
+     demandesAffichees = [];
+    for(let i=0;i<demandes.length;i++){
+        if(
+            demandes[i].nom.toLowerCase().includes(valeur)||
+            demandes[i].prenom.toLowerCase().includes(valeur)||
+            demandes[i].tel.toLowerCase().includes(valeur)||
+            demandes[i].email.toLowerCase().includes(valeur)||
+            demandes[i].date.toLowerCase().includes(valeur)||
+            demandes[i].motif.toLowerCase().includes(valeur)
+        ){
+                demandesAffichees.push( demandes[i])
+               }
+              
+      
+    } 
     currentPage = 1;
-    afficherDemandes();
+                afficherDemandes()
 }
+
+
+
 function updateCompteur() {
     cercleCompteur.textContent = demandesAffichees.length;
 }
