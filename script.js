@@ -11,7 +11,7 @@ let currentPage = 1;
 const itemsPerPage = 5;
 
 let demandes = JSON.parse(localStorage.getItem("demandes2")) || [];
-let demandesAffichees = [...demandes]; // 👈 clé du filtre
+let demandesAffichees = [...demandes]; //  clé du filtre
 
 function saveDemandes() {
     localStorage.setItem("demandes2", JSON.stringify(demandes));
@@ -27,7 +27,19 @@ function afficherMessage(texte, type) {
 }
 
 const cercleCompteur = document.getElementById("cercleCompteur");
+function appliquerFiltre() {
+    const valeur = rechercheInput.value.toLowerCase();
 
+    demandesAffichees = demandes.filter(d =>
+        d.nom.toLowerCase().includes(valeur) ||
+        d.prenom.toLowerCase().includes(valeur) ||
+        d.tel.toString().includes(valeur) ||
+        d.email.toLowerCase().includes(valeur)
+    );
+
+    currentPage = 1;
+    afficherDemandes();
+}
 function updateCompteur() {
     cercleCompteur.textContent = demandesAffichees.length;
 }
@@ -37,7 +49,7 @@ btnRecherche.addEventListener("click", () => {
     appliquerFiltre(); // appelle la même fonction que l’input
 });
 
-
+// rechercheInput.addEventListener("input", appliquerFiltre);
 
 function afficherDemandes() {
     tableBody.innerHTML = "";
@@ -124,23 +136,6 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     currentPage++;
     afficherDemandes();
 });
-
-function appliquerFiltre() {
-    const valeur = rechercheInput.value.toLowerCase();
-
-    demandesAffichees = demandes.filter(d =>
-        d.nom.toLowerCase().includes(valeur) ||
-        d.prenom.toLowerCase().includes(valeur) ||
-        d.tel.toString().includes(valeur) ||
-        d.email.toLowerCase().includes(valeur)
-    );
-
-    currentPage = 1;
-    afficherDemandes();
-}
-
-// rechercheInput.addEventListener("input", appliquerFiltre);
-
 document.addEventListener("DOMContentLoaded", () => {
     demandesAffichees = [...demandes];
     afficherDemandes();
