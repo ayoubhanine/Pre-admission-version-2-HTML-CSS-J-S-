@@ -40,7 +40,7 @@ body.darkn th{
     height: 16px;
 }
 .btn-dark-med {
-  background: linear-gradient(135deg, #0f172a, #020617);
+  background: linear-gradient(135deg, #446ac5, #a6b2e8);
   color: #e5e7eb;
   border: none;
   padding: 12px 28px;
@@ -220,14 +220,14 @@ button:hover {
     display: inline-flex;          /* permet de centrer le contenu facilement */
     justify-content: center;       /* centre horizontalement */
     align-items: center;           /* centre verticalement */
-    width: 40px;                   /* largeur du cercle */
-    height: 40px;                  /* hauteur du cercle */
-    border-radius: 50%;            /* rend l'élément circulaire */
-    background-color: #2f74c0;     /* couleur de fond */
-    color: white;                  /* couleur du texte */
+    width: 40px;                   
+    height: 40px;                 
+    border-radius: 50%;          
+    background-color: #2f74c0;    
+    color: white;                /* couleur du texte */
     font-weight: bold;             /* texte en gras */
     font-size: 16px;               /* taille du texte */
-    margin-right: 10px;            /* petit espace avant le texte suivant */
+    margin-right: 10px;           
 }
 .search-wrapper {
     position: relative;

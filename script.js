@@ -58,12 +58,12 @@ function appliquerFiltre() {
      demandesAffichees = [];
     for(let i=0;i<demandes.length;i++){
         if(
-            demandes[i].nom.toLowerCase().includes(valeur)||
-            demandes[i].prenom.toLowerCase().includes(valeur)||
-            demandes[i].tel.toLowerCase().includes(valeur)||
-            demandes[i].email.toLowerCase().includes(valeur)||
-            demandes[i].date.toLowerCase().includes(valeur)||
-            demandes[i].motif.toLowerCase().includes(valeur)
+            demandes[i].nom.toLowerCase()===valeur||
+            demandes[i].prenom.toLowerCase()===valeur||
+            demandes[i].tel.toLowerCase()===valeur||
+            demandes[i].email.toLowerCase()===valeur||
+            demandes[i].date.toLowerCase()===valeur||
+            demandes[i].motif.toLowerCase()===valeur
         ){
                 demandesAffichees.push( demandes[i])
                }
