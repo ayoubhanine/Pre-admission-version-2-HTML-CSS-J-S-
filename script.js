@@ -40,39 +40,54 @@ function afficherMessage(texte, type) {
 }
 
 const cercleCompteur = document.getElementById("cercleCompteur");
-// function appliquerFiltre() {
-//     const valeur = rechercheInput.value.toLowerCase();
+function appliquerFiltre() {
+    const valeur = rechercheInput.value.toLowerCase();
 
-//     demandesAffichees = demandes.filter(d =>
-//         d.nom.toLowerCase().includes(valeur) ||
-//         d.prenom.toLowerCase().includes(valeur) ||
-//         d.tel.toString().includes(valeur) ||
-//         d.email.toLowerCase().includes(valeur)
-//     );
+    demandesAffichees = demandes.filter(d =>
+        d.nom.toLowerCase().includes(valeur) ||
+        d.prenom.toLowerCase().includes(valeur) ||
+        d.tel.toString().includes(valeur) ||
+        d.email.toLowerCase().includes(valeur)
+    );
+
+    currentPage = 1;
+    afficherDemandes();
+}
+// function appliquerFiltre() {
+//     const valeur = rechercheInput.value.trim().toLowerCase();
+
+//     //  si champ vide  afficher toutes les demandes
+//     if (valeur === "") {
+//         demandesAffichees = [];
+//         for (let i = 0; i < demandes.length; i++) {
+//             demandesAffichees.push(demandes[i]);
+//         }
+//         currentPage = 1;
+//         afficherDemandes();
+//         return;
+//     }
+
+//     demandesAffichees = [];
+
+//     for (let i = 0; i < demandes.length; i++) {
+//         const d = demandes[i];
+
+//         if (
+//             d.nom.toLowerCase().includes(valeur) ||
+//             d.prenom.toLowerCase().includes(valeur) ||
+//             d.tel.includes(valeur) ||
+//             d.email.toLowerCase().includes(valeur) ||
+//             d.date.includes(valeur) ||
+//             d.motif.toLowerCase().includes(valeur)
+//         ) {
+//             demandesAffichees.push(d);
+//         }
+//     }
 
 //     currentPage = 1;
 //     afficherDemandes();
 // }
-function appliquerFiltre() {
-    const valeur = rechercheInput.value.toLowerCase();
-     demandesAffichees = [];
-    for(let i=0;i<demandes.length;i++){
-        if(
-            demandes[i].nom.toLowerCase()===valeur||
-            demandes[i].prenom.toLowerCase()===valeur||
-            demandes[i].tel.toLowerCase()===valeur||
-            demandes[i].email.toLowerCase()===valeur||
-            demandes[i].date.toLowerCase()===valeur||
-            demandes[i].motif.toLowerCase()===valeur
-        ){
-                demandesAffichees.push( demandes[i])
-               }
-              
-      
-    } 
-    currentPage = 1;
-                afficherDemandes()
-}
+
 
 
 
