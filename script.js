@@ -53,44 +53,6 @@ function appliquerFiltre() {
     currentPage = 1;
     afficherDemandes();
 }
-// function appliquerFiltre() {
-//     const valeur = rechercheInput.value.trim().toLowerCase();
-
-//     //  si champ vide  afficher toutes les demandes
-//     if (valeur === "") {
-//         demandesAffichees = [];
-//         for (let i = 0; i < demandes.length; i++) {
-//             demandesAffichees.push(demandes[i]);
-//         }
-//         currentPage = 1;
-//         afficherDemandes();
-//         return;
-//     }
-
-//     demandesAffichees = [];
-
-//     for (let i = 0; i < demandes.length; i++) {
-//         const d = demandes[i];
-
-//         if (
-//             d.nom.toLowerCase().includes(valeur) ||
-//             d.prenom.toLowerCase().includes(valeur) ||
-//             d.tel.includes(valeur) ||
-//             d.email.toLowerCase().includes(valeur) ||
-//             d.date.includes(valeur) ||
-//             d.motif.toLowerCase().includes(valeur)
-//         ) {
-//             demandesAffichees.push(d);
-//         }
-//     }
-
-//     currentPage = 1;
-//     afficherDemandes();
-// }
-
-
-
-
 function updateCompteur() {
     cercleCompteur.textContent = demandesAffichees.length;
 }

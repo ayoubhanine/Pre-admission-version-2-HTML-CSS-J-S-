@@ -51,6 +51,12 @@ body.darkn th{
   transition: all 0.3s ease;
   box-shadow: 0 0 12px rgba(62, 81, 176, 0.25);
 }
+.darkness{
+  display: flex;
+ 
+  align-items: center;
+  justify-content: end;
+}
 
 .btn-dark-med:hover {
   background: linear-gradient(135deg, #020617, #0f172a);
@@ -91,6 +97,12 @@ body.darkn .header{
 }
 h2{
     margin-top: 0;
+}
+table td {
+  white-space: nowrap; /* empêche le retour à la ligne */
+  overflow: hidden;    /* cache le texte qui dépasse */
+  text-overflow: ellipsis; /* affiche "..." si le texte est trop long */
+  max-width: 200px;    /* largeur maximale de la cellule */
 }
 .form-grid {
   display: grid;
