@@ -264,7 +264,7 @@ button:hover {
 }
 
 
-/* === Responsive === */
+/*Responsive*/
 @media screen and (max-width: 992px) {
   .form-grid {
     grid-template-columns: 1fr; /* une seule colonne pour tablettes */
